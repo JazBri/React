@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import Inputs from './Inputs';
-// import Header from './Header';
-
-
+import Header from './Header';
 
 const Content = () => {
     //Definir el state
@@ -40,7 +38,7 @@ const Content = () => {
         console.log(select);
         setTech( select )
     }
-
+    const saludo = 'Hi';
     const mostrarCards = () =>{
         guardarMostrarC1(true);     
         guardarMostrarC2(true);     
@@ -52,13 +50,10 @@ const Content = () => {
 
     return ( 
             <>
-                <ul className="nav">
-                    <li className="nav-item">
-                        <a className="nav-link" href="#"
-                            onClick ={mostrarCards}
-                        ></a>
-                    </li>
-                </ul>
+            <Header
+                titulo = 'HOLA'
+            />
+        
 
         
 {/* COLUMNA */}
@@ -139,7 +134,7 @@ const Content = () => {
                         <img src="..." className="card-img-top" alt="..."/>
                         <div className="card-body">
                             <a href="#" className="card-title">CARD 3</a>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p className="card-text">This    is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                             <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>

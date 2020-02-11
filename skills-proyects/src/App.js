@@ -7,8 +7,9 @@ function App() {
   return (
     <>
       {/* <Header/> */}
+
       <Content/>
-   
+      
       <Inputs
         titulo = "TITULO"
       />
@@ -17,3 +18,9 @@ function App() {
 }
 
 export default App;
+
+
+/**
+ *<Header/> Muestra el navbar 
+ * <Content> Muestra el content
+ */
