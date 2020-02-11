@@ -1,0 +1,83 @@
+.select{
+    color:white;
+
+}
+
+
+.nav{
+    background-color: black;
+    height: 70px;
+}
+
+.nav-link{
+    background-image: url("icon.png");
+    background-color: black;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    margin-left: 25px;
+}
+
+.card{
+    width: 25em;;
+    margin: 15px;
+}
+
+
+.card-group{
+    margin-left: 300px;
+    margin-top: -1000px;
+}
+
+.card-img-top{
+    background-image: url("icon.png");
+    height: 100px;
+}
+
+.card-title{
+    color: rgb(141, 32, 41);
+    font-weight: bold;
+
+}
+.card-bottom{
+    margin-top: 100px;
+    height: 100px;
+    width: 100px;
+}
+.col{
+    margin-top: 0px;
+    margin-right: 500px;
+}
+.col2{
+    margin-top: -280px;
+    margin-left: 450px;
+}
+
+.columna{
+    background-color: rgb(0, 0, 0);
+    height: 1000px;
+    width: 300px;
+    padding-top: 10px;
+    margin-left: 0;
+    
+}
+
+.titulo{
+    background-color: rgb(255, 255, 255);
+    margin-left: 300px;
+    padding-left: 10px;
+    font-weight: lighter;
+    
+  
+}
+
+.infoPersonal{
+    background-color: rgb(51, 51, 51);
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    padding: 45px;
+    margin-top: -57px;
+    font-weight: lighter;
+    color: white;   
+}
