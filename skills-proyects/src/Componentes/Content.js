@@ -38,7 +38,8 @@ const Content = () => {
         console.log(select);
         setTech( select )
     }
-    const saludo = 'Hi';
+
+
     const mostrarCards = () =>{
         guardarMostrarC1(true);     
         guardarMostrarC2(true);     
@@ -47,6 +48,43 @@ const Content = () => {
         guardarMostrarC5(true); 
 
     }
+
+/**
+ * map()
+ *const numbers = [1, 2, 3, 4, 5];
+ *const doubled = numbers.map((number) => number * 2);
+ *console.log(doubled);
+ * muestra: [2, 4, 6, 8, 10]
+ * 
+ * 
+ **/
+
+    function Cards (id, text, textMuted){
+        this.id = id;
+        this.text = text;
+        this.textMuted = textMuted;
+    }
+    
+    let card1 = new Cards('Card1', 'Hi 1!', 'Its working 1!!');
+    let card2 = new Cards('Card2', 'Hi 2!', 'Its working 2!!');
+    let card3 = new Cards('Card3', 'Hi 3!', 'Its working 3!!');
+    let card4 = new Cards('Card4', 'Hi 4!', 'Its working 4!!');
+    let card5 = new Cards('Card5', 'Hi 5!', 'Its working 5!!');
+
+    const cards = [card1, card2, card3, card4, card5];
+    let i = 0;
+    const listItems = cards.map((div) => 
+        <div className="card">
+            <img src="..." className="card-img-top" alt="..."/>
+            <div className="card-body">
+                <a href="#" className="card-title">{div.id}</a>
+                <p className="card-text">{div.text}</p>
+                <p className="card-text"><small className="text-muted">{div.textMuted}</small></p>
+            </div>
+        </div>
+    );
+
+
 
     return ( 
             <>
@@ -60,7 +98,11 @@ const Content = () => {
             <h2 className="titulo">LANGUAGES & TECHNOLOGIES</h2>
             <div className="columna">
                 <div className = "infoPersonal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                
+
                 <div className = "infoPersonal">{tech}</div>
+
+
             
 {/* SEARCH */}
             <form>
@@ -104,64 +146,29 @@ const Content = () => {
 {/* // CARDS */}
 
             <div className="card-group">
+        
                 {(mostrarC1) ? 
-                    <div className="card">
-                        <img src="..." className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <a href="#" className="card-title">CARD 1 (al llamarme cambia la página)</a>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                        
-                    </div>
+                    <>{listItems[0]}</>
                 : null}
 
 
                 {(mostrarC2) ? 
-                    <div className="card">
-                        <img src="..." className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <a href="#" className="card-title">CARD 2</a>
-                            <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                <>{listItems[1]}</>
                 : null}
                 
                 
                 {(mostrarC3) ? 
-                    <div className="card">
-                        <img src="..." className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <a href="#" className="card-title">CARD 3</a>
-                            <p className="card-text">This    is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                <>{listItems[2]}</>
                 : null}
 
 
                 {(mostrarC4) ? 
-                    <div className="card">
-                        <img src="..." className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <a href="#" className="card-title">CARD 4</a>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                <>{listItems[3]}</>
                 : null}
 
 
                 {(mostrarC5) ?
-                    <div className="card">
-                        <img src="..." className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <a href="#" className="card-title">CARD 5</a>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                <>{listItems[4]}</>
                 : null}
             </div>
         </>
