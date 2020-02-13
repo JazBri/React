@@ -1,23 +1,27 @@
 import React, {useState} from 'react';
 import Inputs from './Inputs';
 import Header from './Header';
+import { render } from '@testing-library/react';
+
+
 
 const Content = () => {
     //Definir el state
-    // const [select, guardarSelect] = useState('');
+    //const [select, guardarSelect] = useState('');
     const [tech, setTech] = useState('');
     // const [mostrar, guardarMostrar] = useState(false);
-    const [mostrarC1, guardarMostrarC1] = useState(false);
-    const [mostrarC2, guardarMostrarC2] = useState(false);
-    const [mostrarC3, guardarMostrarC3] = useState(false);
-    const [mostrarC4, guardarMostrarC4] = useState(false);
-    const [mostrarC5, guardarMostrarC5] = useState(false);
+    const [mostrarC1, guardarMostrarC1] = useState(true);
+    const [mostrarC2, guardarMostrarC2] = useState(true);
+    const [mostrarC3, guardarMostrarC3] = useState(true);
+    const [mostrarC4, guardarMostrarC4] = useState(true);
+    const [mostrarC5, guardarMostrarC5] = useState(true);
 
 
     const inicio = ( e ) => {
         const select = e.target.value
         //guardarSelect(e.target.value)
         
+        //this.setState({mostrarC1: false})
         guardarMostrarC1(false);     
         guardarMostrarC2(false);     
         guardarMostrarC3(false);     
@@ -49,15 +53,7 @@ const Content = () => {
 
     }
 
-/**
- * map()
- *const numbers = [1, 2, 3, 4, 5];
- *const doubled = numbers.map((number) => number * 2);
- *console.log(doubled);
- * muestra: [2, 4, 6, 8, 10]
- * 
- * 
- **/
+
 
     function Cards (id, text, textMuted){
         this.id = id;
@@ -72,10 +68,9 @@ const Content = () => {
     let card5 = new Cards('Card5', 'Hi 5!', 'Its working 5!!');
 
     const cards = [card1, card2, card3, card4, card5];
-    let i = 0;
     const listItems = cards.map((div) => 
         <div className="card">
-            <img src="..." className="card-img-top" alt="..."/>
+            <a src="..." className="card-img-top" alt="..."></a>
             <div className="card-body">
                 <a href="#" className="card-title">{div.id}</a>
                 <p className="card-text">{div.text}</p>
@@ -85,7 +80,7 @@ const Content = () => {
     );
 
 
-
+//render(){
     return ( 
             <>
             <Header
@@ -106,11 +101,12 @@ const Content = () => {
             
 {/* SEARCH */}
             <form>
+
                 <div className="form-group">      
                     <select className="form-control" id="exampleFormControlSelect1"
                         onClick ={inicio}  
                         // onClick ={ e=> guardarSelect(e.target.value)}
-                    >           
+                    >         
                         <option>CARD1</option>
                         <option>CARD2</option>
                         <option>CARD3</option>
@@ -169,7 +165,7 @@ const Content = () => {
 
                 {(mostrarC5) ?
                 <>{listItems[4]}</>
-                : null}
+                : null} 
             </div>
         </>
     );
